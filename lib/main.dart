@@ -138,6 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     setState(() {
       isDownloading = false;
+      downloadProgress = 0;
     });
   }
 
@@ -164,7 +165,32 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 5),
             Visibility(
               visible: isDownloading,
-              child: Text('Download progress :$downloadProgress'),
+              child: Container(
+                constraints: BoxConstraints(
+                    maxWidth: MediaQuery.of(context).size.width / 3),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Colors.black)),
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        width: ((MediaQuery.of(context).size.width / 3) / 100) *
+                            downloadProgress,
+                        height: 20,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Download progress :$downloadProgress',
+                          style: const TextStyle(color: Colors.black),
+                        )),
+                  ],
+                ),
+              ),
             ),
             const SizedBox(height: 5),
             ElevatedButton(
