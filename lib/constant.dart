@@ -1,3 +1,3 @@
 class Constant{
-  static const double currentVersion = 0.1;
+  static double currentVersion = 1.0;
 }

@@ -151,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.orange,
+      backgroundColor: Colors.orange,
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+             Text(
               'Current Version Of App ${Constant.currentVersion}',
             ),
             const SizedBox(height: 5),
